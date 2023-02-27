@@ -1,35 +1,37 @@
 import "../style/style.css";
-import { dom } from "./dom.js";
+import { DOM } from "./dom.js";
 const url = "https://www.boredapi.com/api/activity/";
 
 async function suggest(url) {
   try {
     let response = await fetch(url);
-    let data = await response.json();
+    let activityData = await response.json();
 
-    console.log(`Activity: ${data.activity}`);
-    console.log(`Type: ${data.type}`);
-    console.log(`Participants: ${data.participants}`);
-    console.log(`Accessibility: ${data.accessibility}`);
+    console.log(activityData);
+    console.log(`Activity: ${activityData.activity}`);
+    console.log(`Type: ${activityData.type}`);
+    console.log(`Participants: ${activityData.participants}`);
+    console.log(`Accessibility: ${activityData.accessibility}`);
 
-    dom.content.insertAdjacentHTML(
+    DOM.content.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="activity">Activity: ${data.activity}</div>
-      <div class="type">Type: ${data.type}</div>
-      <div class="participants">Participants: ${data.participants}</div>
-      <div class="accessibility">Accessibility: ${data.accessibility}</div>
+      <div class="activity">Activity: ${activityData.activity}</div>
+      <div class="type">Type: ${activityData.type}</div>
+      <div class="participants">Participants: ${activityData.participants}</div>
+      <div class="accessibility">Accessibility: ${activityData.accessibility}</div>
       `
     );
   } catch (error) {
-    console.error("There's a problem with the API");
+    console.error(error);
   }
 }
 suggest(url);
 
-dom.buttonNew.addEventListener(onclick, function () {
-  suggest(url);
-});
+DOM.buttonNew.onclick = async (e, url) => {
+  e.preventDefault();
+  suggest(url, activityData);
+};
 /* dom.content.insertAdjacentHTML(
   "beforeend",
   `
