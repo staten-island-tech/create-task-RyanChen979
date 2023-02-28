@@ -25,6 +25,7 @@ a:hover {
 
 body {
   margin: 0;
+
   text-align: center;
   min-width: 320px;
   min-height: 100vh;
@@ -34,6 +35,15 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   font-family: "Source Code Pro", monospace;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+.box {
+  border: 2px solid #535bf2;
+  margin: 0 20rem 0 20rem;
 }
 
 button {

@@ -1,6 +1,7 @@
 import "../style/style.css";
 import { DOM } from "./dom.js";
 const url = "https://www.boredapi.com/api/activity/";
+const activitySuggestions = [];
 
 async function suggest(url) {
   try {
@@ -16,10 +17,16 @@ async function suggest(url) {
     DOM.content.insertAdjacentHTML(
       "beforeend",
       `
-      <div class="activity">Activity: ${activityData.activity}</div>
-      <div class="type">Type: ${activityData.type}</div>
-      <div class="participants">Participants: ${activityData.participants}</div>
-      <div class="accessibility">Accessibility: ${activityData.accessibility}</div>
+      <div class="box">
+        <div class="activity">Activity: ${activityData.activity}</div>
+        <div class="type">Type: ${activityData.type}</div>
+        <div class="participants">
+          Participants: ${activityData.participants}
+        </div>
+        <div class="accessibility">
+          Accessibility: ${activityData.accessibility}
+        </div>
+      </div>
       `
     );
   } catch (error) {
@@ -28,10 +35,12 @@ async function suggest(url) {
 }
 suggest(url);
 
-DOM.buttonNew.onclick = async (e, url) => {
+DOM.buttonNew.addEventListener("click", function (e) {
   e.preventDefault();
-  suggest(url, activityData);
-};
+  DOM.content.innerHTML = "";
+  suggest(url);
+});
+
 /* dom.content.insertAdjacentHTML(
   "beforeend",
   `
