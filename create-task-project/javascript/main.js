@@ -42,13 +42,3 @@ DOM.buttonNew.addEventListener("click", function (e) {
   DOM.content.innerHTML = "";
   suggest(url);
 });
-
-/* dom.content.insertAdjacentHTML(
-  "beforeend",
-  `
-    <div class="activity">Activity: ${data.activity}</div>
-    <div class="type">Type: ${data.type}</div>
-    <div class="participants">Participants: ${data.participants}</div>
-    <div class="accessibility">Accessibility: ${data.accessibility}</div>
-    `
-); */
