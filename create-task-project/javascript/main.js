@@ -18,13 +18,13 @@ async function suggest(url) {
       "beforeend",
       `
       <div class="box">
-        <div class="activity">Activity: ${activityData.activity}</div>
-        <div class="type">Type: ${activityData.type}</div>
+        <div class="activity"><h2>Activity: ${activityData.activity}</h2></div>
+        <div class="type"><h3>Type: ${activityData.type}</h3></div>
         <div class="participants">
-          Participants: ${activityData.participants}
+          <h3>Participants: ${activityData.participants}</h3>
         </div>
         <div class="accessibility">
-          Accessibility: ${activityData.accessibility}
+          <h3>Accessibility: ${activityData.accessibility}</h3>
         </div>
       </div>
       `
@@ -34,6 +34,8 @@ async function suggest(url) {
   }
 }
 suggest(url);
+
+function push2History() {}
 
 DOM.buttonNew.addEventListener("click", function (e) {
   e.preventDefault();
