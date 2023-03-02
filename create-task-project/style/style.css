@@ -40,10 +40,13 @@ h1 {
 .content {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .box {
   border: 2px solid #535bf2;
+  border-radius: 25px;
   margin: 0 20rem 0 20rem;
+  padding: 2rem;
 }
 
 button {
