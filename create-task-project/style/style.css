@@ -39,16 +39,18 @@ h1 {
 
 .content {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .box {
   border: 2px solid #535bf2;
   border-radius: 25px;
   background-color: #535bf2;
-  margin: 0 20rem 0 20rem;
+  margin: 2rem 0 2rem 0;
   padding: 2rem;
+  width: 25%;
 }
 .box:hover {
   border: 2px solid white;
