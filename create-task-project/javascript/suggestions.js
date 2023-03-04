@@ -21,7 +21,7 @@ async function suggest(url) {
       "beforeend",
       `
       <div data-aos="zoom-out-up" class="box">
-        <div class="activity"><h3>Activity: ${activityData.activity}</h3></div>
+        <div class="activity"><h2>Activity: ${activityData.activity}</h2></div>
         <div class="type"><h3>Type: ${activityData.type}</h3></div>
         <div class="participants">
           <h3>Participants: ${activityData.participants}</h3>
@@ -79,7 +79,7 @@ DOM.historyButton.addEventListener("click", function (e) {
       "beforeend",
       `
       <div data-aos="zoom-out-up" class="box">
-        <div class="activity"><h3>Activity: ${el.activity}</h3></div>
+        <div class="activity"><h2>Activity: ${el.activity}</h2></div>
         <div class="type"><h3>Type: ${el.type}</h3></div>
         <div class="participants">
           <h3>Participants: ${el.participants}</h3>
