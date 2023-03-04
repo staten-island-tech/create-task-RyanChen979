@@ -10,14 +10,19 @@
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,700;1,200;1,400&display=swap"
       rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>Free Time Activities</title>
   </head>
   <body>
     <h1 class="title">Random Free Time Activites</h1>
     <div class="buttons">
-      <button class="new-suggestion">New Suggestion</button>
+      <button class="new-suggestion">One New Suggestion</button>
       <button class="ten-suggestions">(10) Suggestions</button>
-      <button class="history-tab">Previous Suggestions</button>
+      <br />
+      <button class="history-all">All Suggestions</button>
+      <button class="history-solo">1 Participant (SOLO)</button>
+      <button class="history-duo">2 Participant (DUO)</button>
+      <button class="history-multi">Multiple Participants</button>
     </div>
     <div class="content">
       <!-- <div class="box">
@@ -32,6 +37,10 @@
       </div> -->
     </div>
 
-    <script type="module" src="./javascript/main.js"></script>
+    <script type="module" src="./javascript/suggestions.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
