@@ -36,18 +36,14 @@ async function suggest(url) {
     if (activityData.participants > 1) {
       activityHistory.push(activityData);
       multiHistory.push(activityData);
-    } else if (activityData.participants === `2`) {
-      activityHistory.push(activityData);
-      multiHistory.push(activityData);
-      duoHistory.push(activityData);
     } else {
       activityHistory.push(activityData);
       soloHistory.push(activityData);
     }
 
+    console.log(activityData);
     console.log(activityHistory);
     console.log(soloHistory);
-    console.log(duoHistory);
     console.log(multiHistory);
   } catch (error) {
     console.error(error);
@@ -109,36 +105,6 @@ DOM.soloButton.addEventListener("click", function (e) {
         `
     )
   );
-});
-
-DOM.duoButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  DOM.content.innerHTML = "";
-
-  if (duoHistory.length > 0) {
-    duoHistory.forEach((el) =>
-      DOM.content.insertAdjacentHTML(
-        "beforeend",
-        `
-        <div data-aos="zoom-out-up" class="box">
-          <div class="activity"><h2>Activity: ${el.activity}</h2></div>
-          <div class="type"><h3>Type: ${el.type}</h3></div>
-          <div class="participants">
-            <h3>Participants: ${el.participants}</h3>
-          </div>
-          <div class="accessibility">
-            <h3>Accessibility: ${el.accessibility}</h3>
-          </div>
-        </div>
-        `
-      )
-    );
-  } else {
-    DOM.content.insertAdjacentHTML(
-      "beforeend",
-      `<h2>Sorry, You don't have anything here. Please ask for more recommendations</h2>`
-    );
-  }
 });
 
 DOM.multiButton.addEventListener("click", function (e) {

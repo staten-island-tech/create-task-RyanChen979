@@ -4,6 +4,5 @@ export const DOM = {
   buttonTen: document.querySelector(".ten-suggestions"),
   historyButton: document.querySelector(".history-all"),
   soloButton: document.querySelector(".history-solo"),
-  duoButton: document.querySelector(".history-duo"),
   multiButton: document.querySelector(".history-multi"),
 };
