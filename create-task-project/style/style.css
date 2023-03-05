@@ -25,7 +25,6 @@ a:hover {
 
 body {
   margin: 0;
-
   text-align: center;
   min-width: 320px;
   min-height: 100vh;
@@ -35,6 +34,10 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
   font-family: "Source Code Pro", monospace;
+}
+
+.headers {
+  text-decoration: underline;
 }
 
 .content {
@@ -70,7 +73,7 @@ button {
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px rgba(0, 0, 0);
   position: relative;
   overflow: hidden;
 }
