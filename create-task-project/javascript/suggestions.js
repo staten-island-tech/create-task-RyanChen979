@@ -42,7 +42,6 @@ async function suggest(url) {
     console.error(error);
   }
 }
-suggest(url);
 
 DOM.buttonNew.addEventListener("click", function (e) {
   e.preventDefault();
@@ -59,71 +58,24 @@ DOM.buttonTen.addEventListener("click", function (e) {
 DOM.historyButton.addEventListener("click", function (e) {
   e.preventDefault();
   DOM.content.innerHTML = "";
-
-  if (activityHistory.length > 0) {
-    activityHistory.forEach((el) =>
-      DOM.content.insertAdjacentHTML(
-        "beforeend",
-        `
-      <div data-aos="zoom-out-up" class="box">
-        <div class="activity"><h2>Activity: ${el.activity}</h2></div>
-        <div class="type"><h3>Type: ${el.type}</h3></div>
-        <div class="participants">
-          <h3>Participants: ${el.participants}</h3>
-        </div>
-        <div class="accessibility">
-          <h3>Accessibility: ${el.accessibility}</h3>
-        </div>
-      </div>
-      `
-      )
-    );
-  } else {
-    DOM.content.insertAdjacentHTML(
-      "beforeend",
-      `
-      <h2>Sorry, there's nothing here. Try asking for more suggestions.</h2>`
-    );
-  }
+  check(activityHistory);
 });
 
 DOM.soloButton.addEventListener("click", function (e) {
   e.preventDefault();
   DOM.content.innerHTML = "";
-
-  if (soloHistory.length > 0) {
-    soloHistory.forEach((el) =>
-      DOM.content.insertAdjacentHTML(
-        "beforeend",
-        `
-        <div data-aos="zoom-out-up" class="box">
-          <div class="activity"><h2>Activity: ${el.activity}</h2></div>
-          <div class="type"><h3>Type: ${el.type}</h3></div>
-          <div class="participants">
-            <h3>Participants: ${el.participants}</h3>
-          </div>
-          <div class="accessibility">
-            <h3>Accessibility: ${el.accessibility}</h3>
-          </div>
-        </div>
-        `
-      )
-    );
-  } else {
-    DOM.content.insertAdjacentHTML(
-      "beforeend",
-      `
-      <h2>Sorry, there's nothing here. Try asking for more suggestions.</h2>`
-    );
-  }
+  check(soloHistory);
 });
 
 DOM.multiButton.addEventListener("click", function (e) {
   e.preventDefault();
   DOM.content.innerHTML = "";
+  check(multiHistory);
+});
 
-  if (multiHistory.length > 0) {
-    multiHistory.forEach((el) =>
+function check(e) {
+  if (e.length > 0) {
+    e.forEach((el) =>
       DOM.content.insertAdjacentHTML(
         "beforeend",
         `
@@ -147,4 +99,4 @@ DOM.multiButton.addEventListener("click", function (e) {
       <h2>Sorry, there's nothing here. Try asking for more suggestions.</h2>`
     );
   }
-});
+}
