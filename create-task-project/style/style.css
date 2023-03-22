@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: white;
+  color: black;
   background-color: #c19770;
 
   font-synthesis: none;
@@ -50,7 +50,7 @@ h1 {
 .box {
   border: 2px solid #5a5a5a;
   border-radius: 25px;
-  background-color: #654321;
+  background-color: white;
   margin: 2rem 0 2rem 0;
   padding: 2rem;
   width: 25%;
